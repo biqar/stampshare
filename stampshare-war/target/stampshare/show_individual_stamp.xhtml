@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/9/13
+  Time: 9:58 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="stamp-left">
+                <h3>Showing Stamp Information</h3>
+                <h:form id="stampData">
+                    <h:outputLabel value="Stamp Name : "/>
+                    <h:outputText value="#{stampAction.stamp.name}"/> <br/>
+
+                    <h:outputLabel value="Country : "/>
+                    <h:outputText value="#{stampAction.stamp.country.name}"/> <br/>
+
+                    <h:outputLabel value="Year : "/>
+                    <h:outputText value="#{stampAction.stamp.year}"/> <br/>
+
+                    <h:outputLabel value="Number of Copy : "/>
+                    <h:outputText value="#{stampAction.stamp.count}"/> <br/>
+
+                    <h:outputLabel value="Rating : "/>
+                    <h:outputText value="#{stampAction.stamp.rating}"/> <br/>
+
+                    <h:outputLabel value="Exchange Policy : "/>
+                    <h:outputText value="#{stampAction.stamp.exchangePolicy.name}"/> <br/>
+
+                    <h:outputLabel value="Stamp Add Date : "/>
+                    <h:outputText value="#{stampAction.stamp.addDate}"/> <br/> <br/>
+
+                    <h:commandLink rendered="#{stampAction.stamp.user.id == loginAction.user.id}"
+                                   action="edit_stamp?faces-redirect=true" value="Edit Stamp"/>
+                </h:form>
+            </div>
+
+            <div class="stamp-right">
+                <h3>Showing Stamp Image</h3>
+                <h:form id="stampImage" enctype="multipart/form-data">
+                    <p:graphicImage height="200" width="200" value="#{stampAction.stampImage}"/> <br/>
+
+                    <h:outputLabel rendered="#{stampAction.stamp.user.id == loginAction.user.id}" value="Edit Profile Image : ">
+                        <br/>
+                        <p:fileUpload value="#{stampAction.stampImageFile}"
+                                      mode="simple"
+                                      sizeLimit="125000"
+                                      allowTypes="/(\.|\/)(jpe?g|png)$/"/> <br/>
+                        <p:commandButton value="Upload" actionListener="#{stampAction.updateStampImage()}"
+                                         ajax="false"/>
+                    </h:outputLabel>
+                </h:form>
+            </div>
+
+
+            <div class="stamp-request">
+                <h:form id="stampRequest">
+                    <h:outputLabel rendered="#{stampAction.stamp.user.id != loginAction.user.id}" value="Request for this Stamp : ">
+                        <br/>
+                        <h:commandButton rendered="#{requestSubmitAction.isValidToRequest(loginAction.user.id, stampAction.stamp.id)}"
+                                         value="Request" actionListener="#{requestSubmitAction.sendRequest}"/>
+                        <h:outputText rendered="#{not requestSubmitAction.isValidToRequest(loginAction.user.id, stampAction.stamp.id)}"
+                                      value="You have requested this Stamp"/>
+                    </h:outputLabel>
+                </h:form>
+            </div>
+
+            <div class="stamp-comment">
+                <h3>Comment on this Stamp</h3>
+                <h:form id="stampComment">
+                    <h:outputLabel rendered="#{empty stampAction.commentList}" value="No one make comment on this stamp before !
+                    Please, Comment on this stamp"/> <br/>
+
+                    <h:outputLabel rendered="#{not empty stampAction.commentList}" value="Previous Comments on this Stamp :">
+                        <br/>
+                        <ui:repeat value="#{stampAction.commentList}" var="comment">
+                            <h:commandLink value="#{comment.user.name}"
+                                           action="#{userProfileAction.showUserProfile(comment.user.id)}"/>
+                            commented at <h:outputText value="#{comment.commentTime}"/> <br/>
+                            <h:outputText value="#{comment.commentData}"/> <br/> <br/>
+                        </ui:repeat>
+                    </h:outputLabel>
+
+                    <h:inputTextarea value="#{commentAction.comment.commentData}" cols="40" rows="10"/><br/>
+                    <h:commandButton value="Submit Comment" action="#{commentAction.addComment()}">
+                        <f:setPropertyActionListener target="#{commentAction.user}" value="#{loginAction.user}"/>
+                        <f:setPropertyActionListener target="#{commentAction.stamp}" value="#{stampAction.stamp}"/>
+                    </h:commandButton>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

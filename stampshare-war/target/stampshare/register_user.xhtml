@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/3/13
+  Time: 12:23 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Register User</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="form">
+                <h3>User Registration Form</h3>
+                <h:form id="register" >
+                    <h:outputLabel styleClass="form-text-field" value="User Name: " for="name"/><br/>
+                        <p:inputText id="name" styleClass="form-input-field" required="true"
+                                     value="#{userRegisterAction.user.name}">
+                            <f:validateRegex pattern="^[A-Za-z]{2,32}$"/>
+                            <p:ajax update="msgUserName" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgUserName" for="name" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Your Password: " for="password"/><br/>
+                        <p:password id="password" styleClass="form-input-field"
+                                    label="password" feedback="true" required="true"
+                                    value="#{userRegisterAction.user.password}" >
+                            <p:ajax update="msgPassword" event="keyup"/>
+                        </p:password>
+                        <p:message id="msgPassword" for="password" display="text"/><br/>
+
+                    <!--<h:outputLabel styleClass="form-text-field" for="confirmPassword" value="Verify Password : "/><br/>-->
+                        <!--<p:password id="confirmPassword" styleClass="form-input-field"-->
+                                    <!--label="Password Verification" required="true">-->
+                            <!--<p:ajax update="msgPassword" event="keyup"/>-->
+                        <!--</p:password> <br/>-->
+                        <!--<p:message id="msgPassword" for="confirmPassword" display="text"/><br/>-->
+
+                    <h:outputLabel styleClass="form-text-field" value="Your Email: " for="email"/><br/>
+                        <p:inputText id="email" styleClass="form-input-field" label="Email" required="true"
+                                     value="#{userRegisterAction.user.email}" >
+                            <f:validateRegex pattern="^([^\s]*@[^\s]*)$"/>
+                            <p:ajax update="msgEmail" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgEmail" for="email" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Your Phone Number: " for="phoneNumber" /><br/>
+                        <p:inputText id="phoneNumber" styleClass="form-input-field" required="true"
+                                     value="#{userRegisterAction.user.phoneNumber}" >
+                            <p:ajax update="msgPhoneNumber" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgPhoneNumber" for="phoneNumber" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Your Address: " for="address" /><br/>
+                        <p:inputText id="address" styleClass="form-input-field" required="true"
+                                     value="#{userRegisterAction.user.address}">
+                            <p:ajax update="msgAddress" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgAddress" for="address" display="text"/><br/>
+
+                    <h:commandButton styleClass="button" value="Submit" action="#{userRegisterAction.registerUser}" ajax="false"/><br/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

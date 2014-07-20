@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+            http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+
+<persistence-unit name="persistDB" transaction-type="JTA">
+
+    <description>DemoEE Main</description>
+
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+    <jta-data-source>stampshare</jta-data-source>
+
+    <!--<exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+
+    <class>domain.User</class>
+    <class>domain.Stamp</class>
+    <class>domain.Country</class>
+    <class>domain.ExchangePolicy</class>
+    <class>domain.Comment</class>
+    <class>domain.Request</class>
+
+
+    <properties>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+
+        <!---->
+        <property name="hibernate.archive.autodetection" value="class"/>
+        <!---->
+
+        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+        <!---->
+        <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+        <property name="hibernate.hbm2ddl.auto" value="update" />
+        <!---->
+    </properties>
+
+</persistence-unit>
+
+</persistence>

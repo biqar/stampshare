@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/7/13
+  Time: 11:50 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Add Stamp</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="form">
+                <h3>Add New Stamp</h3>
+                
+                <h:form id="addStamp" enctype="multipart/form-data">
+                    <h:outputLabel styleClass="form-text-field" value="Stamp Name: " for="name"/><br/>
+                        <p:inputText id="name" styleClass="form-input-field" required="true"
+                                     value="#{stampAddingAction.stamp.name}">
+                            <f:validateRegex pattern="^[A-Za-z]{2,32}$"/>
+                            <p:ajax update="msgStampName" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgStampName" for="name" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Year: " for="year"/><br/>
+                        <p:inputText styleClass="form-input-field" id="year" required="true"
+                                     value="#{stampAddingAction.stamp.year}">
+                            <p:ajax update="msgStampYear" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgStampYear" for="year" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Stamp Count: " for="count"/><br/>
+                        <p:inputText styleClass="form-input-field" id="count" required="true"
+                                     value="#{stampAddingAction.stamp.count}">
+                            <p:ajax update="msgStampCount" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgStampCount" for="count" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Stamp Rating: " for="rating"/><br/>
+                        <p:inputText styleClass="form-input-field" id="rating" value="#{stampAddingAction.stamp.rating}" >
+                        </p:inputText><br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Stamp Country: " for="country"/><br/>
+                        <p:selectOneMenu id="country" value="#{stampAddingAction.countryName}">
+                            <f:selectItems value="#{countryAction.countryList}" var="country"
+                                           itemLabel="#{country.name}" itemValue="#{country.name}"/>
+                            <!--<f:converter converterId="countryAutoCompleteConverter" />-->
+                        </p:selectOneMenu> <br/>
+
+                    <h:outputLabel styleClass="form-text-field" value="Exchange Policy: " for="exchangePolicy"/><br/>
+                        <p:selectOneMenu id="exchangePolicy" value="#{stampAddingAction.exchangePolicyName}">
+                            <f:selectItems value="#{exchangePolicyAction.exchangePolicyList}" var="exchangePolicy"
+                                           itemLabel="#{exchangePolicy.name}" itemValue="#{exchangePolicy.name}"/>
+                            <!--<f:converter converterId="exchangePolicyAutoCompleteConverter" />-->
+                        </p:selectOneMenu> <br/>
+
+                    <h:outputLabel value="Stamp Image: " for="stampImage"/> <br/>
+                        <p:message for="stampImage" />
+                        <p:fileUpload id="stampImage" required="false"
+                                      value="#{stampAddingAction.stampImageFile}"
+                                      mode="simple"
+                                      binding="#{stampAddingAction.fileUploadComponent}">
+                        </p:fileUpload>
+                        <br/>
+
+                    <h:commandButton styleClass="button" value="Submit" action="#{stampAddingAction.addStamp}">
+                        <f:setPropertyActionListener target="#{stampAddingAction.user}" value="#{loginAction.user}" />
+                    </h:commandButton><br/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

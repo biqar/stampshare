@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/13/13
+  Time: 9:31 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <h:form id="showSearchResult">
+                <h3>Your query matched with the items below:</h3>
+
+                <h:panelGrid rendered="#{searchAction.stampList.size() == 0}">
+                    <h:outputText value="No Stamp has been found for your Query!"/> <br/>
+                </h:panelGrid>
+
+                <div class="stamp-table">
+                    <h:panelGrid rendered="#{searchAction.stampList.size() != 0}">
+                        <ui:repeat value="#{searchAction.stampList}" var="stamp">
+                            <p:graphicImage height="200" width="200" value="#{searchAction.stampImage}" >
+                                <f:param name="id" value="#{stamp.id}" />
+                            </p:graphicImage>
+                            <br/>
+
+                            <h:outputText value="Country: #{stamp.country.name}" /> <br/>
+                            <h:outputText value="For : #{stamp.exchangePolicy.name}" /> <br/>
+
+                            <h:link value="View Details" action="search"/> <br/><br/>
+
+                        </ui:repeat>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="stampshare-ejb:ejb exploded">
+    <output-path>$PROJECT_DIR$/stampshare-ejb/target/stampshare</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="stampshare-ejb/ejb/EJB" />
+      <element id="module-output" name="stampshare-ejb" />
+    </root>
+  </artifact>
+</component>

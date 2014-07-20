@@ -1,0 +1,178 @@
+Java HotSpot(TM) 64-Bit Server VM (build 23.21-b01, mixed mode)
+[  42949]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix icon path=/ideTalk/user.png class=class icons.IdetalkCoreIcons 
+[  42988]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix icon path=/ideTalk/user.png class=class icons.IdetalkCoreIcons 
+[  44518]   WARN - pl.ExternalResourceManagerImpl - Cannot find standard resource. filename:/META-INF/tapestry_5_0_0.xsd class=null 
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+[WARNING] Overriding profile: 'artifactory' (source: settings.xml) with new instance from source: settings.xml
+[WARNING] POM for 'stampshare:stampshare-war:pom:1.0-SNAPSHOT:compile' is invalid.
+
+Its dependencies (if any) will NOT be available to the current build.
+[WARNING] Overriding profile: 'artifactory' (source: settings.xml) with new instance from source: settings.xml
+[4434435]   WARN - pi.vfs.impl.jar.JarHandlerBase - error in opening zip file: /home/raqibul/IdeaProjects/stampshare/stampshare-war/pom.xml 
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:214)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:144)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:158)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.createJarFile(JarHandlerBase.java:128)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getJar(JarHandlerBase.java:114)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.initEntries(JarHandlerBase.java:83)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntriesMap(JarHandlerBase.java:256)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntryInfo(JarHandlerBase.java:251)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntryInfo(JarHandlerBase.java:246)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.list(JarHandlerBase.java:230)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl.list(JarFileSystemImpl.java:287)
+	at com.intellij.openapi.vfs.newvfs.persistent.RefreshWorker.scan(RefreshWorker.java:113)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.scan(RefreshSessionImpl.java:136)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.a(RefreshQueueImpl.java:101)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.access$100(RefreshQueueImpl.java:39)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl$1.run(RefreshQueueImpl.java:77)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[4434437]   WARN - pi.vfs.impl.jar.JarHandlerBase - error in opening zip file: /home/raqibul/IdeaProjects/stampshare/stampshare-war/pom.xml 
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:214)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:144)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:158)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.createJarFile(JarHandlerBase.java:128)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getJar(JarHandlerBase.java:114)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.initEntries(JarHandlerBase.java:83)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntriesMap(JarHandlerBase.java:256)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.list(JarHandlerBase.java:233)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl.list(JarFileSystemImpl.java:287)
+	at com.intellij.openapi.vfs.newvfs.persistent.RefreshWorker.scan(RefreshWorker.java:113)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.scan(RefreshSessionImpl.java:136)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.a(RefreshQueueImpl.java:101)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.access$100(RefreshQueueImpl.java:39)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl$1.run(RefreshQueueImpl.java:77)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[WARNING] Overriding profile: 'artifactory' (source: settings.xml) with new instance from source: settings.xml
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+[5133731]   WARN - pi.vfs.impl.jar.JarHandlerBase - error in opening zip file: /home/raqibul/IdeaProjects/stampshare/stampshare-war/pom.xml 
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:214)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:144)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:158)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.createJarFile(JarHandlerBase.java:128)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getJar(JarHandlerBase.java:114)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.initEntries(JarHandlerBase.java:83)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntriesMap(JarHandlerBase.java:256)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntryInfo(JarHandlerBase.java:251)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntryInfo(JarHandlerBase.java:246)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.list(JarHandlerBase.java:230)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl.list(JarFileSystemImpl.java:287)
+	at com.intellij.openapi.vfs.newvfs.persistent.RefreshWorker.scan(RefreshWorker.java:113)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.scan(RefreshSessionImpl.java:136)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.a(RefreshQueueImpl.java:101)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.execute(RefreshQueueImpl.java:54)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.launch(RefreshSessionImpl.java:107)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:66)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:46)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl$1$1.run(JarFileSystemImpl.java:98)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:343)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:727)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:697)
+	at com.intellij.ide.IdeEventQueue.d(IdeEventQueue.java:686)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:511)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:334)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+[5133732]   WARN - pi.vfs.impl.jar.JarHandlerBase - error in opening zip file: /home/raqibul/IdeaProjects/stampshare/stampshare-war/pom.xml 
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:214)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:144)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:158)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.createJarFile(JarHandlerBase.java:128)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getJar(JarHandlerBase.java:114)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.initEntries(JarHandlerBase.java:83)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.getEntriesMap(JarHandlerBase.java:256)
+	at com.intellij.openapi.vfs.impl.jar.JarHandlerBase.list(JarHandlerBase.java:233)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl.list(JarFileSystemImpl.java:287)
+	at com.intellij.openapi.vfs.newvfs.persistent.RefreshWorker.scan(RefreshWorker.java:113)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.scan(RefreshSessionImpl.java:136)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.a(RefreshQueueImpl.java:101)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.execute(RefreshQueueImpl.java:54)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.launch(RefreshSessionImpl.java:107)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:66)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:46)
+	at com.intellij.openapi.vfs.impl.jar.JarFileSystemImpl$1$1.run(JarFileSystemImpl.java:98)
+	at com.intellij.openapi.application.impl.LaterInvocator$FlushQueue.run(LaterInvocator.java:343)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:727)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:697)
+	at com.intellij.ide.IdeEventQueue.d(IdeEventQueue.java:686)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:511)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:334)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+[WARNING] Overriding profile: 'artifactory' (source: settings.xml) with new instance from source: settings.xml
+[WARNING] Overriding profile: 'artifactory' (source: settings.xml) with new instance from source: settings.xml
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Java HotSpot(TM) 64-Bit Server VM (build 23.21-b01, mixed mode)
+[  27701]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix icon path=/ideTalk/user.png class=class icons.IdetalkCoreIcons 
+[  27745]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix icon path=/ideTalk/user.png class=class icons.IdetalkCoreIcons 
+[  29178]   WARN - pl.ExternalResourceManagerImpl - Cannot find standard resource. filename:/META-INF/tapestry_5_0_0.xsd class=null 
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+Warning:  The encoding 'UTF-8' is not supported by the Java runtime.
+[1235334]   WARN - api.vfs.impl.local.FileWatcher - Watcher terminated. 
+[1235360]   WARN - ution.process.OSProcessHandler - Cannot kill process tree. Trying to destroy process using Java API. Cmdline:
+null 
+Exception in XML-RPC listener loop (java.net.SocketException: Socket closed).

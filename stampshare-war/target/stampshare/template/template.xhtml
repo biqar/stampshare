@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/10/13
+  Time: 3:44 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <div id="page">
+
+        <div class="header">
+            <ui:insert name="header">
+                <h1>Stampshare</h1>
+                <h4>A place for stamp collector ...</h4>
+            </ui:insert>
+        </div>
+
+        <div class="user-greeting">
+            <ui:insert name="user-greeting">
+                <h:form id="userGreeting">
+                    <h:panelGroup rendered="#{loginAction.loggedIn}">
+                        Hi, <h:commandLink value="#{loginAction.user.name}" action="#{userProfileAction.showUserProfile(loginAction.user.id)}"/> |
+                        <h:commandLink value="Logout" action="#{loginAction.destroySession()}"/>
+                        <br/>
+                        <h:commandLink value="My Stamp Album" action="show_stamp_album?faces-redirect=true">
+                            <f:setPropertyActionListener target="#{stampAlbumAction.user}" value="#{loginAction.user}" />
+                        </h:commandLink>
+                        <br/>
+                        <h:link outcome="search?faces-redirect=true" value="Search" />
+                        <br/>
+                        <h:link outcome="add_stamp?faces-redirect=true" value="Add Stamp" />
+                        <br/>
+                        <h:link rendered="#{loginAction.admin}" outcome="show_request_data?faces-redirect=true" value="Get request Statistics" />
+                    </h:panelGroup>
+                </h:form>
+            </ui:insert>
+        </div>
+
+        <div class="content">
+            <ui:insert name="content">
+            </ui:insert>
+        </div>
+
+        <div class="footer">
+            <ui:insert name="footer">
+                <div class="footer-content">
+                    <h:outputText value="Developed and maintained by Raqibul Islam @2013" />
+                </div>
+            </ui:insert>
+        </div>
+
+    </div>
+</h:body>
+</html>

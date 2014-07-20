@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/6/13
+  Time: 4:53 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="form">
+                <h3>Profile Info Edit</h3>
+                <h:form>
+                    <h:outputLabel styleClass="form-text-field" for="name" value="Name : "/><br/>
+                        <p:inputText styleClass="form-input-field" id="name" required="true"
+                                     value="#{userProfileAction.user.name}" label="name">
+                            <f:validateRegex pattern="^[A-Za-z]{2,32}$"/>
+                            <p:ajax update="msgUserName" event="keyup"/>
+                        </p:inputText>
+                    <p:message id="msgUserName" for="name" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" for="password" value="Your Password: "/><br/>
+                        <p:password styleClass="form-input-field" id="password" required="true"
+                                    value="#{userProfileAction.user.password}" label="password">
+                            <p:ajax update="msgPassword" event="keyup"/>
+                        </p:password>
+                    <p:message id="msgPassword" for="password" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" for="email" value="E-mail : "/><br/>
+                        <p:inputText styleClass="form-input-field" id="email" required="true"
+                                     value="#{userProfileAction.user.email}" label="email">
+                            <f:validateRegex pattern="^([^\s]*@[^\s]*)$"/>
+                            <p:ajax update="msgEmail" event="keyup"/>
+                        </p:inputText>
+                    <p:message id="msgEmail" for="email" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" for="phone" value="Phone Number : "/><br/>
+                    <p:inputText styleClass="form-input-field" id="phone" required="true"
+                                 value="#{userProfileAction.user.phoneNumber}" label="phone">
+                        <p:ajax update="msgPhoneNumber" event="keyup"/>
+                    </p:inputText>
+                    <p:message id="msgPhoneNumber" for="phone" display="text"/><br/>
+
+                    <h:outputLabel styleClass="form-text-field" for="address" value="Address : "/><br/>
+                    <p:inputText styleClass="form-input-field" id="address" required="true"
+                                 value="#{userProfileAction.user.address}" label="address">
+                        <p:ajax update="msgAddress" event="keyup"/>
+                    </p:inputText>
+                    <p:message id="msgAddress" for="address" display="text"/><br/>
+
+                    <h:commandButton styleClass="button" action="#{userProfileAction.updateProfileData}" value="Update"/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

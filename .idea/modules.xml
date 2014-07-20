@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/stampshare.iml" filepath="$PROJECT_DIR$/stampshare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stampshare-app/stampshare-app.iml" filepath="$PROJECT_DIR$/stampshare-app/stampshare-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stampshare-ejb/stampshare-ejb.iml" filepath="$PROJECT_DIR$/stampshare-ejb/stampshare-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stampshare-war/stampshare-war.iml" filepath="$PROJECT_DIR$/stampshare-war/stampshare-war.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/14/13
+  Time: 11:32 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="form">
+                <h3>Get Request Statistics :</h3>
+                <h:form id="getRequest">
+                    <p:outputLabel styleClass="form-text-field" value="Request From : " /><br/>
+                        <p:calendar value="#{requestAction.requestFrom}" id="requestFrom" showOn="button" /> <br/>
+
+                    <p:outputLabel styleClass="form-text-field" value="Request To : " /><br/>
+                        <p:calendar value="#{requestAction.requestTo}" id="requestTo" showOn="button" /> <br/>
+
+                    <h:commandButton styleClass="button" value="Get Request Data" action="#{requestAction.requestStatistics}"/>
+                </h:form>
+            </div>
+
+            <div>
+                <h:form id="showRequestStatistics">
+                    <p:barChart id="basic" value="#{requestAction.chartModel}" legendPosition="ne"
+                                    title="Request Count of Stamp from #{requestAction.requestFrom} to #{requestAction.requestTo}"
+                                    min="0" max="60" animate="true" />
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

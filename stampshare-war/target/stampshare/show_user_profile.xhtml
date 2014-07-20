@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/6/13
+  Time: 12:11 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>User Profile Page</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="profile-left">
+                <h3>Showing User Information</h3>
+                <h:form id="profileData">
+                    <h:outputLabel value="Name : "/>
+                    <h:outputText value="#{userProfileAction.user.name}"/> <br/>
+
+                    <h:outputLabel value="E-mail : "/>
+                    <h:outputText value="#{userProfileAction.user.email}"/> <br/>
+
+                    <h:outputLabel value="Phone : "/>
+                    <h:outputText value="#{userProfileAction.user.phoneNumber}"/> <br/>
+
+                    <h:outputLabel value="Joined Date : "/>
+                    <h:outputText value="#{userProfileAction.user.joinDate}"/> <br/>
+
+                    <h:outputLabel value="Address : "/>
+                    <h:outputText value="#{userProfileAction.user.address}"/> <br/>
+
+                    <h:commandLink rendered="#{userProfileAction.user.id == loginAction.user.id}"
+                                   action="edit_user_profile?faces-redirect=true" value="Edit"/> <br/>
+
+                    <h:commandLink value="Show Stamp Album" action="show_stamp_album?faces-redirect=true">
+                        <f:setPropertyActionListener target="#{stampAlbumAction.user}" value="#{userProfileAction.user}" />
+                    </h:commandLink>
+                </h:form>
+            </div>
+
+            <div class="profile_right">
+                <h3>Showing User Image</h3>
+                <h:form id="profileImage" enctype="multipart/form-data">
+                    <p:graphicImage height="200" width="200" value="#{userProfileAction.profileImage}"/> <br/>
+
+                    <h:outputLabel rendered="#{userProfileAction.user.id == loginAction.user.id}" value="Edit Profile Image : ">
+                        <br/>
+                        <p:message for="userProfileImage" />
+                        <p:fileUpload id="userProfileImage" required="false"
+                                      value="#{userProfileAction.profileImageFile}"
+                                      mode="simple"
+                                      binding="#{userProfileAction.fileUploadComponent}" /> <br/>
+
+                        <p:commandButton value="Upload" actionListener="#{userProfileAction.updateProfileImage}"
+                                         ajax="false"/>
+                    </h:outputLabel>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

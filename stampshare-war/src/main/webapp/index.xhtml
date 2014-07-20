@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 9/9/13
+  Time: 12:51 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>stampshare</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div class="login-box">
+                <h3>Login to Stampshare</h3>
+                <h:form id="login">
+                    <p:outputLabel styleClass="form-text-field" value="Username : " for="name"/><br/>
+                        <p:inputText required="true" styleClass="form-input-field" id="name"
+                                     value="#{loginAction.user.name}" >
+                            <p:ajax update="msgUserName" event="keyup"/>
+                        </p:inputText>
+                        <p:message id="msgUserName" for="name" display="text"/><br/>
+
+                    <p:outputLabel styleClass="form-text-field" value="Password : " for="password"/><br/>
+                        <p:password required="true" id="password" styleClass="form-input-field"
+                                    value="#{loginAction.user.password}">
+                            <p:ajax update="msgUserPassword" event="keyup"/>
+                        </p:password>
+                        <p:message id="msgUserPassword" for="password" display="text"/><br/>
+
+                    <h:commandButton styleClass="button" value="Log In" action="#{loginAction.login()}"/>
+
+                    <br/><br/><h:outputText value="Don't have any account? " />
+                    <h:link outcome="register_user" value="Register"/> <br/>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

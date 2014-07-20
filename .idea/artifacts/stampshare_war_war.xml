@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="stampshare-war:war">
+    <output-path>$PROJECT_DIR$/stampshare-war/target</output-path>
+    <root id="archive" name="stampshare.war">
+      <element id="artifact" artifact-name="stampshare-war:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="stampshare-app:ear">
+    <output-path>$PROJECT_DIR$/stampshare-app/target</output-path>
+    <root id="archive" name="stampshare.ear">
+      <element id="artifact" artifact-name="stampshare-app:ear exploded" />
+    </root>
+  </artifact>
+</component>

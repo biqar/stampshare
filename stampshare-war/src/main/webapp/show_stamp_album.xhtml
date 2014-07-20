@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/8/13
+  Time: 7:16 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <div>
+                <h:form id="showStampAlbum">
+                    <h3 style="text-align: center">Show Stamps of user : <h:commandLink
+                            value="#{stampAlbumAction.user.name}"
+                            action="#{userProfileAction.showUserProfile(stampAlbumAction.user.id)}"/>
+                    </h3>
+
+                    <p:panelGrid rendered="#{stampAlbumAction.stampList.size() == 0}">
+                        <h:outputText value="No Stamp has been added so far!"/> <br/>
+                        <h:link rendered="#{stampAlbumAction.user.id == loginAction.user.id}"
+                                outcome="add_stamp?faces-redirect=true"
+                                value="Want to add Stamp ?"/> <br/>
+                    </p:panelGrid>
+
+                    <div class="stamp-galleria">
+                        <h:panelGroup rendered="#{stampAlbumAction.stampList.size() != 0}">
+                            <p:galleria value="#{stampAlbumAction.stampList}"
+                                        var="stamp" panelWidth="500" panelHeight="313"
+                                        showCaption="true">
+                                <p:graphicImage height="313" width="500" value="#{stampAlbumAction.stampImage}"
+                                                alt="Stamp Country : #{stamp.country.name}"
+                                                title="Exchange Policy : #{stamp.exchangePolicy.name}" >
+                                    <f:param name="id" value="#{stamp.id}" />
+                                </p:graphicImage>
+                            </p:galleria>
+                        </h:panelGroup>
+                    </div>
+
+                    <div class="stamp-table">
+                        <h:panelGroup rendered="#{stampAlbumAction.stampList.size() != 0}">
+                            <ui:repeat value="#{stampAlbumAction.stampList}" var="stamp">
+
+                                <p:graphicImage height="200" width="200" value="#{stampAlbumAction.stampImage}" >
+                                    <f:param name="id" value="#{stamp.id}" />
+                                </p:graphicImage>
+                                <br/>
+
+                                <h:outputText value="Country: #{stamp.country.name}" /> <br/>
+                                <h:outputText value="For : #{stamp.exchangePolicy.name}" /> <br/>
+                                <h:commandLink value="View Details" action="#{stampAction.showStamp(stamp.id)}"/> <br/><br/>
+                            </ui:repeat>
+                        </h:panelGroup>
+                    </div>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

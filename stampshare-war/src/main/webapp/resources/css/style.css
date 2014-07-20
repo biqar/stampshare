@@ -1,0 +1,164 @@
+/*Header*/
+.header {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: yellowgreen;
+    padding-left: 10px;
+}
+
+/*Content*/
+.content {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: orange;
+    padding-left: 10px;
+}
+
+.user-greeting {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: darkkhaki;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/*Required Mark*/
+.required {
+    color: red;
+}
+
+/*Button*/
+.button {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+    padding-top: 5px;
+}
+
+/*User List*/
+.user-list {
+    text-align: center;
+}
+
+/*User Profile*/
+.profile-left {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 400px;
+    padding-left: 10px;
+}
+
+.profile_right {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    position: relative;
+    top: -200px;
+    left: 600px;
+    width: 300px;
+    padding-left: 10px;
+}
+
+/*Stamp Showing*/
+.stamp-left {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 400px;
+    padding-left: 10px;
+}
+
+.stamp-right {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    position: relative;
+    top: -200px;
+    left: 600px;
+    width: 300px;
+    padding-left: 10px;
+}
+
+.stamp-request {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+
+.stamp-comment {
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin: auto;
+    width: 800px;
+}
+
+.stamp-galleria {
+    margin-left: 30%;
+}
+
+/*Login Box*/
+.login-box {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 30%;
+
+    padding-left: 10px;
+}
+
+/*Form*/
+.form {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin: auto;
+    width: 500px;
+}
+
+.form-input-field {
+    height: 20px;
+    width: 305px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.form-text-field {
+    font-family: Arial;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/*Footer*/
+.footer {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: darkkhaki;
+    height: 40px;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial;
+    padding-top: 12px;
+}

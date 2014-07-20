@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: raqibul
+  Date: 10/10/13
+  Time: 3:06 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+    <ui:composition template="template/template.xhtml">
+        <ui:define name="content">
+            <h3>Search by Stamp Name :</h3>
+            <h:form id="search_by_stamp_name">
+                <p:outputLabel styleClass="form-text-field" value="Stamp Name : " for="name"/>
+                <p:inputText styleClass="form-input-field" id="name" value="#{searchAction.stampName}"/> <br/>
+
+                <h:commandButton styleClass="button" value="Search User" action="#{searchAction.searchByStampName()}"/>
+            </h:form>
+
+            <h3>Advanced Search :</h3>
+            <h:form id="search_advanced">
+                <p:outputLabel styleClass="form-text-field" value="Stamp Year : "/> <br/>
+                    <p:inputText styleClass="form-input-field" id="yearFrom" value="#{searchAction.advancedSearchModel.stampYearFrom}"/> to
+                    <p:inputText styleClass="form-input-field" id="yearTo" value="#{searchAction.advancedSearchModel.stampYearTo}"/> <br/>
+
+                <h:outputLabel styleClass="form-text-field" value="Stamp Country: " for="country"/><br/>
+                    <p:selectOneMenu id="country" value="#{searchAction.advancedSearchModel.stampCountryName}">
+                        <f:selectItems value="#{countryAction.countryList}" var="country"
+                                       itemLabel="#{country.name}" itemValue="#{country.name}"/>
+                    </p:selectOneMenu> <br/>
+
+                <h:outputLabel styleClass="form-text-field" value="Exchange Policy: " for="exchangePolicy"/> <br/>
+                    <p:selectOneMenu id="exchangePolicy" value="#{searchAction.advancedSearchModel.stampExchangePolicyName}">
+                        <f:selectItems value="#{exchangePolicyAction.exchangePolicyList}" var="exchangePolicy"
+                                       itemLabel="#{exchangePolicy.name}" itemValue="#{exchangePolicy.name}"/>
+                    </p:selectOneMenu> <br/>
+
+                <p:outputLabel styleClass="form-text-field" value="Stamp Rating : "/><br/>
+                    <p:inputText styleClass="form-input-field" id="ratingFrom" value="#{searchAction.advancedSearchModel.stampRatingFrom}"/> to
+                    <p:inputText styleClass="form-input-field" id="ratingTo" value="#{searchAction.advancedSearchModel.stampRatingTo}"/> <br/>
+
+                <h:commandButton styleClass="button" value="Advanced Search" action="#{searchAction.advancedSearch()}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

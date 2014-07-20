@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="stampshare-ejb:ejb">
+    <output-path>$PROJECT_DIR$/stampshare-ejb/target</output-path>
+    <root id="archive" name="stampshare.jar">
+      <element id="artifact" artifact-name="stampshare-ejb:ejb exploded" />
+    </root>
+  </artifact>
+</component>
